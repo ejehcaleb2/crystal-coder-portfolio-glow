@@ -60,19 +60,19 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-orbitron font-bold text-center glow-text mb-16">
+    <section id="projects" className="py-12 px-4">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center glow-text mb-12">
           Featured Projects
         </h2>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
           {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => setFilter(category.id)}
-              className={`glass-panel px-6 py-3 rounded-lg transition-all duration-300 font-inter font-medium ${
+              className={`glass-panel px-4 py-2 rounded-lg transition-all duration-300 font-inter font-medium text-sm ${
                 filter === category.id
                   ? 'neon-border bg-neon-purple/20 text-neon-purple'
                   : 'border-white/20 text-glow-white/80 hover:border-neon-purple/50 hover:text-neon-purple'
@@ -84,29 +84,27 @@ const ProjectsSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
-              className={`glass-panel p-8 neon-border hover-glow animate-slide-up group ${
-                project.featured ? 'md:col-span-2 lg:col-span-1' : ''
-              }`}
+              className={`glass-panel p-6 neon-border hover-glow animate-slide-up group`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Project Preview */}
-              <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg mb-6 flex items-center justify-center group-hover:from-crystal-blue/10 group-hover:to-neon-purple/10 transition-all duration-300">
-                <div className="text-4xl text-crystal-blue group-hover:scale-110 transition-transform">
+              <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg mb-4 flex items-center justify-center group-hover:from-crystal-blue/10 group-hover:to-neon-purple/10 transition-all duration-300">
+                <div className="text-3xl text-crystal-blue group-hover:scale-110 transition-transform">
                   {project.title.charAt(0)}
                 </div>
               </div>
 
               {/* Project Info */}
-              <div className="space-y-4">
-                <h3 className="text-2xl font-orbitron font-bold text-crystal-blue group-hover:glow-text transition-all">
+              <div className="space-y-3">
+                <h3 className="text-xl font-orbitron font-bold text-crystal-blue group-hover:glow-text transition-all">
                   {project.title}
                 </h3>
                 
-                <p className="text-glow-white/80 font-inter leading-relaxed">
+                <p className="text-glow-white/80 font-inter leading-relaxed text-sm">
                   {project.description}
                 </p>
 
@@ -115,7 +113,7 @@ const ProjectsSection = () => {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="glass-panel px-3 py-1 text-sm border-electric-cyan/30 text-electric-cyan rounded-full"
+                      className="glass-panel px-2 py-1 text-xs border-electric-cyan/30 text-electric-cyan rounded-full"
                     >
                       {tech}
                     </span>
@@ -123,15 +121,15 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-4 pt-4">
+                <div className="flex gap-3 pt-3">
                   <Button
-                    className="bg-gradient-to-r from-crystal-blue/20 to-electric-cyan/20 text-crystal-blue border-crystal-blue/30 hover:from-crystal-blue/30 hover:to-electric-cyan/30"
+                    className="bg-gradient-to-r from-crystal-blue/20 to-electric-cyan/20 text-crystal-blue border-crystal-blue/30 hover:from-crystal-blue/30 hover:to-electric-cyan/30 text-sm px-4 py-2"
                     variant="outline"
                   >
                     Live Demo
                   </Button>
                   <Button
-                    className="bg-gradient-to-r from-neon-purple/20 to-purple-600/20 text-neon-purple border-neon-purple/30 hover:from-neon-purple/30 hover:to-purple-600/30"
+                    className="bg-gradient-to-r from-neon-purple/20 to-purple-600/20 text-neon-purple border-neon-purple/30 hover:from-neon-purple/30 hover:to-purple-600/30 text-sm px-4 py-2"
                     variant="outline"
                   >
                     GitHub

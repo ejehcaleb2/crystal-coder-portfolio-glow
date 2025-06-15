@@ -48,27 +48,27 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-4">
+    <section id="contact" className="py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-orbitron font-bold text-center glow-text mb-16">
+        <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center glow-text mb-12">
           Send Transmission
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Form */}
-          <div className="glass-panel p-8 neon-border hover-glow">
-            <h3 className="text-2xl font-orbitron font-bold text-crystal-blue mb-6">
+          <div className="glass-panel p-6 neon-border hover-glow">
+            <h3 className="text-xl font-orbitron font-bold text-crystal-blue mb-4">
               Initiate Contact Protocol
             </h3>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <Input
                   name="name"
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="glass-panel neon-border bg-transparent text-glow-white placeholder:text-glow-white/50 border-crystal-blue/30 focus:border-crystal-blue"
+                  className="glass-panel neon-border bg-transparent text-glow-white placeholder:text-glow-white/50 border-crystal-blue/30 focus:border-crystal-blue h-10"
                   required
                 />
               </div>
@@ -80,7 +80,7 @@ const ContactSection = () => {
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="glass-panel neon-border bg-transparent text-glow-white placeholder:text-glow-white/50 border-crystal-blue/30 focus:border-crystal-blue"
+                  className="glass-panel neon-border bg-transparent text-glow-white placeholder:text-glow-white/50 border-crystal-blue/30 focus:border-crystal-blue h-10"
                   required
                 />
               </div>
@@ -91,7 +91,7 @@ const ContactSection = () => {
                   placeholder="Your Message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows={5}
+                  rows={4}
                   className="glass-panel neon-border bg-transparent text-glow-white placeholder:text-glow-white/50 border-crystal-blue/30 focus:border-crystal-blue resize-none"
                   required
                 />
@@ -99,7 +99,7 @@ const ContactSection = () => {
               
               <Button
                 type="submit"
-                className="w-full glass-panel hover-glow neon-border bg-gradient-to-r from-crystal-blue/20 to-electric-cyan/20 text-crystal-blue font-semibold py-3 animate-glow-pulse"
+                className="w-full glass-panel hover-glow neon-border bg-gradient-to-r from-crystal-blue/20 to-electric-cyan/20 text-crystal-blue font-semibold py-2 animate-glow-pulse text-sm"
               >
                 🚀 Launch Message
               </Button>
@@ -107,25 +107,25 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Info & Social */}
-          <div className="space-y-8">
-            <div className="glass-panel p-8 neon-border hover-glow animate-float">
-              <h3 className="text-2xl font-orbitron font-bold text-neon-purple mb-6">
+          <div className="space-y-6">
+            <div className="glass-panel p-6 neon-border hover-glow animate-float">
+              <h3 className="text-xl font-orbitron font-bold text-neon-purple mb-4">
                 Direct Channels
               </h3>
               
-              <div className="space-y-4">
-                <p className="text-glow-white/80 font-inter">
+              <div className="space-y-3">
+                <p className="text-glow-white/80 font-inter text-sm">
                   Ready to collaborate on your next project? Let's build something amazing together.
                 </p>
                 
                 <div className="flex flex-col space-y-2">
-                  <span className="text-electric-cyan font-mono">
+                  <span className="text-electric-cyan font-mono text-sm">
                     📍 Lagos, Nigeria
                   </span>
-                  <span className="text-electric-cyan font-mono">
+                  <span className="text-electric-cyan font-mono text-sm">
                     🎓 Economics Student
                   </span>
-                  <span className="text-electric-cyan font-mono">
+                  <span className="text-electric-cyan font-mono text-sm">
                     💻 Full-Stack Developer
                   </span>
                 </div>
@@ -133,25 +133,25 @@ const ContactSection = () => {
             </div>
 
             {/* Social Links */}
-            <div className="glass-panel p-8 neon-border hover-glow">
-              <h4 className="text-xl font-orbitron font-bold text-crystal-blue mb-6">
+            <div className="glass-panel p-6 neon-border hover-glow">
+              <h4 className="text-lg font-orbitron font-bold text-crystal-blue mb-4">
                 Social Networks
               </h4>
               
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {socialLinks.map((link, index) => (
                   <a
                     key={link.name}
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center space-x-4 p-3 glass-panel neon-border hover-glow transition-all duration-300 group animate-slide-up ${link.color}`}
+                    className={`flex items-center space-x-3 p-3 glass-panel neon-border hover-glow transition-all duration-300 group animate-slide-up ${link.color}`}
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <span className="text-2xl group-hover:scale-110 transition-transform">
+                    <span className="text-xl group-hover:scale-110 transition-transform">
                       {link.icon}
                     </span>
-                    <span className="font-inter font-medium">
+                    <span className="font-inter font-medium text-sm">
                       {link.name}
                     </span>
                   </a>

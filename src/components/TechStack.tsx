@@ -32,19 +32,19 @@ const TechStack = () => {
   ];
 
   return (
-    <section id="tech-stack" className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-orbitron font-bold text-center glow-text mb-16">
+    <section id="tech-stack" className="py-12 px-4">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center glow-text mb-12">
           Tech Stack
         </h2>
 
         {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
           {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => setFilter(category.id)}
-              className={`glass-panel px-6 py-3 rounded-lg transition-all duration-300 font-inter font-medium ${
+              className={`glass-panel px-4 py-2 rounded-lg transition-all duration-300 font-inter font-medium text-sm ${
                 filter === category.id
                   ? 'neon-border bg-crystal-blue/20 text-crystal-blue'
                   : 'border-white/20 text-glow-white/80 hover:border-crystal-blue/50 hover:text-crystal-blue'
@@ -56,17 +56,17 @@ const TechStack = () => {
         </div>
 
         {/* Tech Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {filteredTech.map((tech, index) => (
             <div
               key={tech.name}
-              className="glass-panel p-6 neon-border hover-glow text-center group cursor-pointer animate-slide-up"
+              className="glass-panel p-4 neon-border hover-glow text-center group cursor-pointer animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={`w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br ${tech.color} flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br ${tech.color} flex items-center justify-center text-white font-bold text-lg group-hover:scale-110 transition-transform duration-300`}>
                 {tech.name.charAt(0)}
               </div>
-              <h3 className="text-glow-white font-semibold font-inter group-hover:text-crystal-blue transition-colors">
+              <h3 className="text-glow-white font-semibold font-inter text-sm group-hover:text-crystal-blue transition-colors">
                 {tech.name}
               </h3>
             </div>
